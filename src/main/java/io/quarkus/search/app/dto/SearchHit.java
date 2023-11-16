@@ -5,5 +5,6 @@ import org.hibernate.search.mapper.pojo.mapping.definition.annotation.IdProjecti
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.ProjectionConstructor;
 
 @ProjectionConstructor
-public record SearchHit(@IdProjection String id, @FieldProjection String title) {
+public record SearchHit(@IdProjection String id, @FieldProjection String title, @FieldProjection String summary,
+        @FieldProjection String keywords) {
 }

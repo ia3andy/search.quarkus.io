@@ -18,7 +18,7 @@ public class InputProviderHtmlBodyTextBridge implements ValueBridge<InputProvide
         try (var in = provider.open()) {
             Element body = Jsoup.parse(in, StandardCharsets.UTF_8.name(), "/").body();
             // Content div has two grid columns: actual content and TOC. There's not much use of the TOC, we want the content only:
-            Element content = body.selectFirst(".content .grid__item");
+            Element content = body.selectFirst(".content .grid_item");
             if (content != null) {
                 // Means we've found a guide content column. hence let's use that to have only real content:
                 return content.text();

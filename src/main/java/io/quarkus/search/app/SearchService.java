@@ -23,7 +23,7 @@ import io.quarkus.search.app.dto.SearchResult;
 import io.quarkus.search.app.entity.Guide;
 
 @ApplicationScoped
-@Path("/")
+@Path("/api")
 public class SearchService {
 
     private static final Integer PAGE_SIZE = 50;
@@ -32,6 +32,7 @@ public class SearchService {
     SearchSession session;
 
     @GET
+    @Path("search")
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Search for any resource")
     @Transactional
